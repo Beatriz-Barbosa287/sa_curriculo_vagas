@@ -5,30 +5,30 @@ import { VagaService } from 'src/app/service/vaga.service';
 @Component({
   selector: 'app-vagas',
   templateUrl: './vagas.component.html',
-  styleUrls: ['./vagas.component.scss'],
+  styleUrls: ['./vagas.component.scss']
 })
-export class VagasComponent implements OnInit {
-  public vagas: Vaga[] = []; //vetor para armazenar as vagas
+export class VagasComponent implements OnInit{
+  // Vetor para armazenar as vagas retornadas da API
+  public vagas: Vaga[] =[];
 
-  constructor(private _vagasService: VagaService) {}
-  // Injetando o serviço de vagas no contrutor do componente
+  // Injetando o serviço de vagas no construtor do componente
+  constructor (private _vagasService : VagaService){}
 
+  // Método chamado ao inicializar o componente
   ngOnInit(): void {
     this.listarVagas();
   }
 
-  listarVagas() {
-    this._vagasService.getVagas().subscribe((retornaVaga) => {
-      //mapear os dados da API
-      this.vagas = retornaVaga.map((item) => {
-        return new Vaga(
-          item.id,
-          item.nome,
-          item.foto,
-          item.descricao,
-          item.salario
+  // Busca todas as vagas no serviço e popula o array de vagas
+  listarVagas(){
+    this._vagasService.getVagas().subscribe(
+      (retornaVaga) => {
+        // Mapeia os dados da API para instâncias do modelo Vaga
+        this.vagas = retornaVaga.map(
+          (item) => 
+            Vaga.fromMap(item)
         );
-      });
-    });
+      }
+    );
   }
 }

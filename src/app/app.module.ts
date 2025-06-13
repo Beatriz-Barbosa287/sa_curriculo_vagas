@@ -23,7 +23,6 @@ import { CurriculoListComponent } from './view/curriculo-list/curriculo-list.com
     HeaderComponent,
     FooterComponent,
     PainelVagasComponent,
-    CurriculoFormComponent,
     CurriculoListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule, FormsModule],

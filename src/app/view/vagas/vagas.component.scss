@@ -1,68 +1,78 @@
 .lista-vagas {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  padding: 32px 0;
+  min-height: 80vh;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.lista-vagas .card {
-  margin: 5px 10px;
-  min-height: 500 px;
-}
-
-.lista-vagas {
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(26, 35, 126, 0.10);
+  width: 340px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 2rem 1rem;
-  max-width: 1800px;
-  margin: 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
 
-  .card {
-    margin: 5px 10px;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3 ease;
-    width: 18rem;
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    }
+.card-body {
+  padding: 18px 20px 20px 20px;
+  width: 100%;
+}
 
-    img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-bottom: 1px solid #aaa;
-    }
+.card-title {
+  color: #1a237e;
+  margin: 0 0 8px 0;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
 
-    .card-body {
-      padding: 1rem;
-
-      h5.card-title {
-        color: #333;
-        font-size: 1.5rem;
-        line-height: 1.5;
-        margin-bottom: 0.5rem;
-      }
-
-      p.card-text {
-        color: #555;
-        font-size: 0.8rem;
-        line-height: 1.5;
-        margin-bottom: 0.5rem;
-      }
-
-      p.card-text:last-child {
-        margin-bottom: 0; //remove a margem da ultima linha
-      }
-    }
-  }
+.card-text {
+  color: #263859;
+  margin: 4px 0;
+  font-size: 1rem;
 }
 
 .rodape {
-  height: 10vh;
+  flex-basis: 100%;
+  height: 1px;
+}
+
+/* Responsivo para tablets */
+@media (max-width: 900px) {
+  .card {
+    width: 90vw;
+    min-width: 220px;
+    max-width: 100%;
+  }
+  .lista-vagas {
+    gap: 18px;
+  }
+}
+
+/* Responsivo para celulares */
+@media (max-width: 600px) {
+  .lista-vagas {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+  }
+  .card {
+    width: 98vw;
+  }
 }

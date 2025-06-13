@@ -8,11 +8,9 @@ import { CurriculoService } from 'src/app/service/curriculo.service';
   styleUrls: ['./curriculo-list.component.scss']
 })
 export class CurriculoListComponent implements OnInit {
-  //atributos
-  public curriculos: Curriculos = new Curriculos(0, 0, '', '', '', '', '', '', ''); // rastreia os dados do Formulário
-  // vetor para armazenar as info do DB
-  public curriculosList: Curriculos[] = [];
-   
+  public curriculos: Curriculos[] = [];
+  public curriculo: Curriculos = new Curriculos(0, 0, '', '', '', '', '', '', '');
+
   constructor(private _curriculoService: CurriculoService) {}
 
   ngOnInit(): void {
@@ -21,18 +19,18 @@ export class CurriculoListComponent implements OnInit {
 
   listarCurriculos() {
     this._curriculoService.getCurriculos().subscribe((retornoCurriculo) => {
-      this.curriculosList = retornoCurriculo.map((item) => Curriculos.fromMap(item));
+      this.curriculos = retornoCurriculo.map((item) => Curriculos.fromMap(item));
     });
   }
 
   listarCurriculoUnico(curriculo: Curriculos) {
-    this.curriculos = curriculo;
+    this.curriculo = curriculo;
   }
-//CADASTRO
+
   cadastrar() {
-    this._curriculoService.createCurriculos(this.curriculos).subscribe(
+    this._curriculoService.createCurriculos(this.curriculo).subscribe(
       () => {
-        this.curriculos = new Curriculos(0, 0, '', '', '', '', '', '', '');
+        this.curriculo = new Curriculos(0, 0, '', '', '', '', '', '', '');
         this.listarCurriculos();
       },
       (err) => {
@@ -41,11 +39,10 @@ export class CurriculoListComponent implements OnInit {
     );
   }
 
-  //ATUALIZAR
   atualizar(id: number) {
-    this._curriculoService.updateCurriculos(this.curriculos).subscribe(
+    this._curriculoService.updateCurriculos(this.curriculo).subscribe(
       () => {
-        this.curriculos = new Curriculos(0, 0, '', '', '', '', '', '', '');
+        this.curriculo = new Curriculos(0, 0, '', '', '', '', '', '', '');
         this.listarCurriculos();
       },
       (err) => {
@@ -54,7 +51,6 @@ export class CurriculoListComponent implements OnInit {
     );
   }
 
-  //deletar
   deletar(id: number) {
     this._curriculoService.deleteCurriculos(id).subscribe(
       () => {
@@ -65,6 +61,4 @@ export class CurriculoListComponent implements OnInit {
       }
     );
   }
-
-  
 }

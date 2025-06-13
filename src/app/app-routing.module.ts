@@ -4,12 +4,13 @@ import { InicioComponent } from './view/inicio/inicio.component';
 import { VagasComponent } from './view/vagas/vagas.component';
 import { PainelVagasComponent } from './view/painel-vagas/painel-vagas.component';
 import { CurriculoFormComponent } from './view/curriculo-form/curriculo-form.component';
+import { CurriculoListComponent } from './view/curriculo-list/curriculo-list.component';
 
 const routes: Routes = [
   {path: "", component: InicioComponent},
   {path: "vagas", component: VagasComponent},
   {path: "painel-vagas", component: PainelVagasComponent},
-
+  {path: "curriculo-list", component: CurriculoListComponent},
   {path: "curriculo-form", component: CurriculoFormComponent},
 ];
 

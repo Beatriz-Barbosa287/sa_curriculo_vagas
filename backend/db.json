@@ -1,38 +1,37 @@
 {
   "vagas": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Desenvolver FrontEnd Jr",
       "foto": "foto1.jpg",
       "descricao": "Trabalhar com HTML, CSS e JS",
       "salario": 4000
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Desenvolver BackEnd Pleno",
       "foto": "foto2.jpg",
       "descricao": "Trabalhar com Desenvolvimento Web",
       "salario": 7000
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Desenvolver Fullstack Senior",
       "foto": "foto3.webp",
       "descricao": "Trabalhar com Desenvolvimento Web",
       "salario": 10000
     },
     {
-      "id": 4,
+      "id": "4",
       "nome": "Gerente de Nuvem",
       "foto": "foto4.webp",
       "descricao": "Vaga de Gerente de Nuvem Geral",
       "salario": 8500
     }
   ],
-
   "curriculos": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "João Silva",
       "foto": "curriculo1.jpg",
       "experiencia": "Desenvolvedor FrontEnd com 2 anos de experiência",
@@ -42,7 +41,7 @@
       "email": "joão@gmail.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Maria Oliveira",
       "foto": "curriculo2.jpg",
       "experiencia": "Desenvolvedora BackEnd com 3 anos de experiência",
@@ -52,7 +51,7 @@
       "email": "maria@gmail.com"
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Carlos Pereira",
       "foto": "curriculo3.jpg",
       "experiencia": "Desenvolvedor Fullstack com 5 anos de experiência",
@@ -60,6 +59,16 @@
       "formacao": "Engenharia de Software",
       "telefone": "1234-5678",
       "email": "carlos@gmail.com"
+    },
+    {
+      "id": "4",
+      "nome": "Beatriz G",
+      "email": "bgb.beatrizgabrielabarbosa@gmail.com",
+      "telefone": "19991065388",
+      "experiencia": "4 anos de Experiência com Banco de Dados na Oracle Cloud",
+      "formacao": "USP-RP-Graduado em Ciência de Dados",
+      "habilidades": "Php,  DDL (Data Definition Language), DML (Data Manipulation Language)",
+      "foto": "curriculo4.jpg"
     }
   ]
 }

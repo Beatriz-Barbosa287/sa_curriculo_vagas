@@ -1,52 +1,87 @@
-.curriculo-form-container {
+form {
   background: #f4f8fb;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(25, 55, 109, 0.10);
-  padding: 2rem 2.5rem;
-  max-width: 540px;
-  margin: 2.5rem auto;
-  border: 1px solid #1a237e22;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(26, 35, 126, 0.10);
+  max-width: 500px;
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-.curriculo-form-container h2 {
-  margin-bottom: 1.5rem;
-  color: #1a237e; // azul escuro
-  font-size: 2.1rem;
-  text-align: center;
-  letter-spacing: 1px;
-}
-
-.curriculo-form-container label {
+h2 {
   color: #1a237e;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+label {
+  color: #1a237e;
+  font-weight: bold;
+  margin-bottom: 4px;
   display: block;
 }
 
-.curriculo-form-container input,
-.curriculo-form-container textarea {
+input[type="text"],
+input[type="email"],
+input[type="file"],
+textarea {
   width: 100%;
-  padding: 0.6rem;
-  margin-bottom: 1.1rem;
-  border: 1px solid #1a237e44;
+  padding: 8px 10px;
+  border: 1px solid #b0bec5;
   border-radius: 6px;
   font-size: 1rem;
+  margin-bottom: 8px;
   background: #fff;
   color: #263859;
 }
 
-.curriculo-form-container button {
+textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.curriculo-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.curriculo-form-container img {
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #b0bec5;
+}
+
+button[type="submit"], button[type="button"] {
   background: #1a237e;
   color: #fff;
   border: none;
   border-radius: 6px;
-  padding: 0.7rem 1.5rem;
+  padding: 10px 18px;
   font-size: 1rem;
-  margin-right: 0.7rem;
+  margin-right: 10px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: background 0.2s;
 }
 
-.curriculo-form-container button:hover {
+button[type="button"] {
   background: #263859;
+}
+
+button[type="submit"]:hover {
+  background: #3949ab;
+}
+
+button[type="button"]:hover {
+  background: #455a64;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  form {
+    padding: 16px 6px;
+    max-width: 98vw;
+  }
 }

@@ -77,4 +77,6 @@ export class CurriculoFormComponent implements OnInit {
       reader.readAsDataURL(file);
     }
   }
+
+  
 }

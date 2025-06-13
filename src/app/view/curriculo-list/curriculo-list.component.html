@@ -1,16 +1,16 @@
-<section class="lista-vagas">
-    <div class="card">
-      <img src="assets/img/vagas/{{ curriculos.foto }}" alt="Foto do Currículo" />
-      <div class="card-body">
-        <h5 class="card-title">Código do Currículo: {{ curriculos.id }}</h5>
-        <h5 class="card-title">Nome: {{ curriculos.nome }}</h5>
-        <p class="card-text">E-mail: {{ curriculos.email }}</p>
-        <p class="card-text">Telefone: {{ curriculos.telefone }}</p>
-        <p class="card-text">Experiência: {{ curriculos.experiencia }}</p>
-        <p class="card-text">Formação: {{ curriculos.formacao }}</p>
-        <p class="card-text">Habilidades: {{ curriculos.habilidades }}</p>
-      </div>
-    </div>
+
+<div class="curriculo-list-container">
+  <div *ngFor="let curriculo of curriculos" class="card-curriculo">
+    <img *ngIf="curriculo.foto" src="assets/img/curriculos/{{ curriculo.foto }}" alt="Foto do Currículo" />
+    <h3>Código do Currículo: {{ curriculo.id }}</h3>
+    <h4>Nome: {{ curriculo.nome }}</h4>
+    <p><strong>E-mail:</strong> {{ curriculo.email }}</p>
+    <p><strong>Telefone:</strong> {{ curriculo.telefone }}</p>
+    <p><strong>Experiência:</strong> {{ curriculo.experiencia }}</p>
+    <p><strong>Formação:</strong> {{ curriculo.formacao }}</p>
+    <p><strong>Habilidades:</strong> {{ curriculo.habilidades }}</p>
+  </div>
+</div>
 
   <div class="rodape"></div>
-</section>
+
