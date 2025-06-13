@@ -41,6 +41,6 @@ export class Vaga {
 
   //fromMap() BD -> obj
   static fromMap(map: any): Vaga {
-    return new Vaga(map.id, map.nome, map.descricao, map.foto, map.salario);
+    return new Vaga(map.id, map.nome, map.foto, map.descricao, map.salario);
   }
 }

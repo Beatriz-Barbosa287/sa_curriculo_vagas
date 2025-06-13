@@ -68,4 +68,11 @@ export class PainelVagasComponent implements OnInit {
       }
     );
   }
+
+  onFileSelected(event: any) {
+  const file = event.target.files[0];
+  if (file) {
+    this.vaga.foto = file.name; // para  mostrar a imagem salve como base 64
+  }
+}
 }

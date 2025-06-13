@@ -2,8 +2,8 @@
 <div class="curriculo-list-container">
   <div *ngFor="let curriculo of curriculos" class="card-curriculo">
     <img *ngIf="curriculo.foto" src="assets/img/curriculos/{{ curriculo.foto }}" alt="Foto do Currículo" />
-    <h3>Código do Currículo: {{ curriculo.id }}</h3>
-    <h4>Nome: {{ curriculo.nome }}</h4>
+    <h5><i>Código:{{ curriculo.id }}</i></h5>
+    <h3>{{ curriculo.nome }}</h3>
     <p><strong>E-mail:</strong> {{ curriculo.email }}</p>
     <p><strong>Telefone:</strong> {{ curriculo.telefone }}</p>
     <p><strong>Experiência:</strong> {{ curriculo.experiencia }}</p>
