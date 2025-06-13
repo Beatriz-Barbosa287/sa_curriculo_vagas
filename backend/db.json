@@ -2,31 +2,38 @@
   "vagas": [
     {
       "id": "1",
-      "nome": "Desenvolver FrontEnd Jr",
+      "nome": "Desenvolvedor FrontEnd",
       "foto": "foto1.jpg",
-      "descricao": "Trabalhar com HTML, CSS e JS",
-      "salario": 4000
+      "descricao": "Desenvolvimento de interfaces web responsivas",
+      "salario": 5000
     },
     {
       "id": "2",
-      "nome": "Desenvolver BackEnd Pleno",
-      "foto": "foto2.jpg",
-      "descricao": "Trabalhar com Desenvolvimento Web",
-      "salario": 7000
+      "nome": "Desenvolvedor BackEnd",
+      "foto": "foto3.webp",
+      "descricao": "Desenvolvimento de APIs e integração com banco de dados",
+      "salario": 6000
     },
     {
       "id": "3",
-      "nome": "Desenvolver Fullstack Senior",
-      "foto": "foto3.webp",
-      "descricao": "Trabalhar com Desenvolvimento Web e Mobile",
-      "salario": 10000
+      "nome": "Desenvolvedor Fullstack",
+      "foto": "foto2.jpg",
+      "descricao": "Desenvolvimento completo de aplicações web",
+      "salario": 7000
     },
     {
       "id": "4",
-      "nome": "Gerente de Nuvem",
+      "nome": "Analista de Dados",
+      "foto": "foto5.webp",
+      "descricao": "Análise e visualização de dados para tomada de decisões",
+      "salario": 8000
+    },
+    {
+      "id": "5",
+      "nome": "Engenheiro de Software",
       "foto": "foto4.webp",
-      "descricao": "Vaga de Gerente de Nuvem Geral",
-      "salario": "8000"
+      "descricao": "Desenvolvimento de sistemas complexos e escaláveis",
+      "salario": 9000
     }
   ],
   "curriculos": [

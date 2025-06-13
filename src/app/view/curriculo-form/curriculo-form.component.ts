@@ -36,8 +36,22 @@ export class CurriculoFormComponent implements OnInit {
       this.isEdit = false;
     }
   }
+  
 
   onSubmit(): void {
+    if (
+      !this.curriculos.nome ||
+      !this.curriculos.email ||
+      !this.curriculos.telefone ||
+      !this.curriculos.experiencia ||
+      !this.curriculos.formacao ||
+      !this.curriculos.habilidades ||
+      !this.curriculos.foto
+    ) {
+      alert('Preencha todos os campos obrigatórios antes de enviar o currículo!');
+      return;
+    }
+
     if (this.isEdit && this.curriculos.id) {
       this._curriculosService.updateCurriculos(this.curriculos).subscribe({
         next: () => alert('Currículo atualizado com sucesso!'),

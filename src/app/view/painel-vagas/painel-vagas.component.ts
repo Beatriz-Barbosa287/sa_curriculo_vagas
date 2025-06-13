@@ -13,7 +13,7 @@ export class PainelVagasComponent implements OnInit {
   // vetor para armazenar as info do DB
   public vagas: Vaga[] = [];
 
-  constructor(private _vagasService: VagaService) {} //servico é criado ao ser construido o obj
+  constructor(private _vagasService: VagaService) { } //servico é criado ao ser construido o obj
 
   ngOnInit(): void {
     this.listarVagas();
@@ -28,13 +28,25 @@ export class PainelVagasComponent implements OnInit {
 
   // listar Vaga Unica
   listarVagaUnica(vaga: Vaga) {
-    this.vaga = vaga;
+    this.vaga = new Vaga(vaga.id, vaga.nome, vaga.foto, vaga.descricao, vaga.salario); // cópia dos dados para edição
   }
 
-  //cadastrar nova Vaga
+  //cadastrar nova Vaga com validação
   cadastrar() {
+    if (
+      !this.vaga.id ||
+      !this.vaga.nome ||
+      !this.vaga.foto ||
+      !this.vaga.descricao ||
+      !this.vaga.salario
+    ) {
+      alert('Preencha todos os campos obrigatórios antes de cadastrar a vaga!');
+      return;
+    }
+
     this._vagasService.cadastrarVaga(this.vaga).subscribe(
       () => {
+        alert('Vaga cadastrada com sucesso!');
         this.vaga = new Vaga(0, '', '', '', 0);
         this.listarVagas();
       },
@@ -44,10 +56,22 @@ export class PainelVagasComponent implements OnInit {
     );
   }
 
-  // atualizar nova Vaga
+  // atualizar Vaga com validação
   atualizar(id: number) {
+    if (
+      !this.vaga.id ||
+      !this.vaga.nome ||
+      !this.vaga.foto ||
+      !this.vaga.descricao ||
+      !this.vaga.salario
+    ) {
+      alert('Preencha todos os campos obrigatórios antes de atualizar a vaga!');
+      return;
+    }
+
     this._vagasService.atualizarVaga(id, this.vaga).subscribe(
       () => {
+        alert('Vaga atualizada com sucesso!');
         this.vaga = new Vaga(0, '', '', '', 0);
         this.listarVagas();
       },
@@ -62,6 +86,7 @@ export class PainelVagasComponent implements OnInit {
     this._vagasService.removerVaga(id).subscribe(
       () => {
         this.listarVagas();
+        this.vaga = new Vaga(0, '', '', '', 0);
       },
       (err) => {
         console.log('Erro ao Deletar', err);
@@ -70,9 +95,9 @@ export class PainelVagasComponent implements OnInit {
   }
 
   onFileSelected(event: any) {
-  const file = event.target.files[0];
-  if (file) {
-    this.vaga.foto = file.name; // para  mostrar a imagem salve como base 64
+    const file = event.target.files[0];
+    if (file) {
+      this.vaga.foto = file.name; // para  mostrar a imagem salve como base 64
+    }
   }
-}
 }

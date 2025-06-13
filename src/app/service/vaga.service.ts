@@ -30,6 +30,7 @@ atualizarVaga(id: any, vaga: Vaga): Observable<Vaga[]> {
   return this.http.put<Vaga[]>(urlAtualizar, vaga);
 }
 
+
 //Deletar DELETE
 removerVaga(id: any): Observable<Vaga[]> {
   const urlDeletar = `${this.apiUrl}/${id}`;
